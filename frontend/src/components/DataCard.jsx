@@ -8,7 +8,12 @@ const DataCard = ({ resident }) => {
       <h3>
         {resident.firstName} {resident.lastName}
       </h3>
-      <p>Role: {resident.role}</p>
+      <p>
+        <i>
+          <strong style={{ fontWeight: "bolder", color: "black" }}>Role</strong>
+        </i>
+        : {resident.role}
+      </p>
       <div className="resident-socials">
         <a
           href={resident.linkedIn || "#"}

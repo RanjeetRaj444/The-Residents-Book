@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/AddDataModal.css";
+import { RxCross1 } from "react-icons/rx";
 
 const AddDataModal = ({ isOpen, setIsOpen, fetchData }) => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const AddDataModal = ({ isOpen, setIsOpen, fetchData }) => {
   }
   function addDataToServer(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/residents/post", {
+    fetch("https://the-residents-book-fbfv.onrender.com/residents/post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,59 +38,75 @@ const AddDataModal = ({ isOpen, setIsOpen, fetchData }) => {
   }
 
   return (
-    <div className={`form-container ${isOpen ? "show" : ""}`}>
-      <h1>Add Data</h1>
-      <form action="" type="submit" className="form" onSubmit={addDataToServer}>
-        <input
-          className="input-fiels"
-          type="text"
-          name="firstName"
-          placeholder="firstName"
-          onChange={handleFromData}
-          required
-        />
-        <input
-          className="input-fiels"
-          type="text"
-          name="lastName"
-          placeholder="lastName"
-          onChange={handleFromData}
-          required
-        />
-        <input
-          className="input-fiels"
-          type="text"
-          name="profilePhoto"
-          placeholder="profilePhoto"
-          onChange={handleFromData}
-        />
-        <input
-          className="input-fiels"
-          type="text"
-          name="role"
-          placeholder="role"
-          onChange={handleFromData}
-          required
-        />
-        <input
-          className="input-fiels"
-          type="text"
-          name="linkedIn"
-          placeholder="linkedIn"
-          onChange={handleFromData}
-        />
-        <input
-          className="input-fiels"
-          type="text"
-          name="twitter"
-          placeholder="twitter"
-          onChange={handleFromData}
-        />
-        <button type="submit" className="from-btn">
-          Add
-        </button>
-      </form>
-    </div>
+    <>
+      <div
+        className={`modal-overlay${isOpen ? " show" : ""}`}
+        onClick={() => setIsOpen(false)}
+      />
+      <div className={`form-container${isOpen ? " show" : ""}`}>
+        <div className="top-conatiner-form">
+          <h1>Add Data</h1>
+          <button onClick={() => setIsOpen(false)} className="social-btn">
+            <RxCross1 />
+          </button>
+        </div>
+        <form
+          action=""
+          type="submit"
+          className="form"
+          onSubmit={addDataToServer}
+        >
+          <input
+            className="input-fiels"
+            type="text"
+            name="firstName"
+            placeholder="firstName"
+            onChange={handleFromData}
+            required
+          />
+          <input
+            className="input-fiels"
+            type="text"
+            name="lastName"
+            placeholder="lastName"
+            onChange={handleFromData}
+            required
+          />
+          <input
+            className="input-fiels"
+            type="text"
+            name="profilePhoto"
+            placeholder="profilePhoto"
+            onChange={handleFromData}
+          />
+          <input
+            className="input-fiels"
+            type="text"
+            name="role"
+            placeholder="role"
+            onChange={handleFromData}
+            required
+          />
+          <input
+            className="input-fiels"
+            type="text"
+            name="linkedIn"
+            placeholder="linkedIn"
+            onChange={handleFromData}
+          />
+          <input
+            className="input-fiels"
+            type="text"
+            name="twitter"
+            placeholder="twitter"
+            onChange={handleFromData}
+          />
+          <button type="submit" className="from-btn">
+            Add
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 
