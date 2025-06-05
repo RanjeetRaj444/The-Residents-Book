@@ -1,8 +1,18 @@
 import { useState } from "react";
 import "../styles/AddDataModal.css";
 import { RxCross1 } from "react-icons/rx";
+import Toast from "./Toast";
 
 const AddDataModal = ({ isOpen, setIsOpen, fetchData }) => {
+  const [toast, setToast] = useState(null);
+
+  const showToast = (msg, type) => {
+    setToast({ message: msg, type });
+  };
+
+  const closeToast = () => {
+    setToast(null);
+  };
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -28,12 +38,14 @@ const AddDataModal = ({ isOpen, setIsOpen, fetchData }) => {
         return res.json();
       })
       .then(() => {
+        showToast("Success Toast!", "success");
         setIsOpen(false);
         e.target.reset();
         fetchData();
       })
       .catch((err) => {
-        alert(`${err}`);
+        showToast("Error Toast!", "error");
+        // alert(`${err}`);
       });
   }
 
@@ -106,6 +118,9 @@ const AddDataModal = ({ isOpen, setIsOpen, fetchData }) => {
           </button>
         </form>
       </div>
+      {toast && (
+        <Toast message={toast.message} type={toast.type} onClose={closeToast} />
+      )}
     </>
   );
 };
