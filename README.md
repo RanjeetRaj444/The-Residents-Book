@@ -4,6 +4,8 @@ This project consists of a **Frontend** built with **React** and **Vite** styled
 
 ---
 
+## https://theresidentmanagementsystem.netlify.app/
+
 ## Home Page
 
 ## ![alt text](<frontend/src/assets/Screenshot 2025-06-05 231701.png>)

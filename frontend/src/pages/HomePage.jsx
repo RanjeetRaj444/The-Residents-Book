@@ -28,6 +28,7 @@ const HomePage = ({ isOpen, setIsOpen }) => {
       {isLoading ? (
         <div>Please wait Loading...</div>
       ) : (
+        
         <div className="resident-list-container">
           <h2 className="resident-list-heading">Resident List</h2>
           <div className="resident-list">
