@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DataCard from "../components/DataCard";
-import "../styles/homePage.css";
+import "../styles/homepage.css";
 import AddDataModal from "../components/AddDataModal";
 
 const HomePage = ({ isOpen, setIsOpen }) => {
@@ -28,7 +28,6 @@ const HomePage = ({ isOpen, setIsOpen }) => {
       {isLoading ? (
         <div>Please wait Loading...</div>
       ) : (
-        
         <div className="resident-list-container">
           <h2 className="resident-list-heading">Resident List</h2>
           <div className="resident-list">
