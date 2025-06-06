@@ -7,7 +7,7 @@ const Navbar = ({ setIsOpen }) => {
       </div>
       <div className="nav-btn-section">
         <button onClick={() => setIsOpen(true)} className="add-recident">
-          Add Recident
+          Add Resident
         </button>
       </div>
     </div>

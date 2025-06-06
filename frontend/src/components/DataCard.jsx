@@ -4,7 +4,14 @@ import { FaLinkedin, FaTwitter } from "react-icons/fa";
 const DataCard = ({ resident }) => {
   return (
     <div key={resident._id} className="resident-card">
-      <img src={resident.profilePhoto} alt="resident" />
+      <img
+        src={
+          resident.profilePhoto === ""
+            ? "https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small_2x/default-avatar-profile-icon-of-social-media-user-vector.jpg"
+            : resident.profilePhoto
+        }
+        alt="resident"
+      />
       <h3>
         {resident.firstName} {resident.lastName}
       </h3>

@@ -29,11 +29,24 @@
   border-radius: 0.5rem;
   background-color: #000000;
   color: white;
+  font-size: 1.3rem;
 }
 .add-recident:hover {
   opacity: 0.8;
 }
 
+@media only screen and (max-width: 1200px) {
+  .navbar {
+    width: 80%;
+  }
+  .home-page-heading {
+    font-size: 0.8rem;
+  }
+  .add-recident {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
 @media only screen and (max-width: 1045px) {
   .navbar {
     width: 70%;
@@ -43,10 +56,7 @@
   }
   .add-recident {
     padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: #000000;
-    color: white;
+    font-size: .8rem;
   }
 }
 
@@ -64,5 +74,8 @@
   }
   .navbar {
     width: 100%;
+  }
+    .add-recident {
+    font-size: .5rem;
   }
 }
